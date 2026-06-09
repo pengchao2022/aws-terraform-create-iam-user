@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 # call a module
-module "iam-user" {
+module "iam-users-batch" {
   source = "git::https://github.com/pengchao2022/aws-terraform-modules.git//modules/iam-user?ref=iam-user-1.0"
   
   # set the encrypted key for all the iam users
@@ -12,7 +12,7 @@ module "iam-user" {
 
   # enable console login
   create_login_profile = true
-  
+
   # iam users list
   iam_users = {
     "kate.winslet"      = { group = "devops" }
