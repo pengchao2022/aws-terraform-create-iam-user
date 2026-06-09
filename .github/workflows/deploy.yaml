@@ -42,4 +42,14 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan 
+
+      - name: Output credentials to file
+        run: |
+          terraform output -json iam_users_credentials > credentials.json
+
+      - name: Upload credentials
+        uses: actions/upload-artifact@v4
+        with:
+          name: iam-credentials
+          path: credentials.json
     
