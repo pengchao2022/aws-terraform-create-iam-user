@@ -30,6 +30,10 @@ module "iam-users-batch" {
 
 }
 
+output "aws_account_id" {
+  value = module.iam-users-batch.account_id
+}
+
 # 直接输出整个模块的凭证 Map，不要在外部包裹
 output "iam_users_credentials" {
   value     = module.iam-users-batch.iam_users_login_info
