@@ -18,6 +18,7 @@ module "iam-users-batch" {
     "kate.winslet"      = { group = "devops" }
     "sophia.zhao"       = { group = "developers" }
     "sean.lim"          = { group = "sre" }
+    "jiajia.xiao"       = { group = "sre" }
   }
 
   # map permissions
