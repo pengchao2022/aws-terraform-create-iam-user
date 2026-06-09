@@ -1,0 +1,45 @@
+name: 'Deploy IAM Users'
+
+on:
+  pull_request:
+    types:
+      - closed
+
+    paths:
+      - '**/*.tf'
+      - '.github/workflows/deploy.yaml'
+
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform-deploy-IAM-users:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        users: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.0"
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan 
+    
