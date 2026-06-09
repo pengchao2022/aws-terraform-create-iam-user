@@ -16,12 +16,12 @@ module "iam-users-batch" {
   # iam users list
   # when you need to add a new onboard IAM user or remove an IAM user edit here
   iam_users = {
-    "kate.winslet"      = { group = "devops" }
-    "sophia.zhao"       = { group = "developers" }
-    "sean.lim"          = { group = "sre" }
-    "jiajia.xiao"       = { group = "sre" }
-    "siwei.li"          = { group = "devops" }
-    "yiming.zhao"       = { group = "developers"}
+    "kate.winslet"      = { groups = ["devops", "sre"] }
+    "sophia.zhao"       = { groups = ["developers"] }
+    "sean.lim"          = { groups = ["sre", "devops", "developers"] }
+    "jiajia.xiao"       = { groups = ["sre"] }
+    "siwei.li"          = { groups = ["devops", "developers"] }
+    "yiming.zhao"       = { groups = ["developers"] }
   }
 
   # map permissions
