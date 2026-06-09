@@ -14,6 +14,7 @@ module "iam-users-batch" {
   create_login_profile = true
 
   # iam users list
+  # when you need to add a new onboard IAM user or remove an IAM user edit here
   iam_users = {
     "kate.winslet"      = { group = "devops" }
     "sophia.zhao"       = { group = "developers" }
@@ -34,13 +35,13 @@ output "aws_account_id" {
   value = module.iam-users-batch.aws_account_id
 }
 
-# 直接输出整个模块的凭证 Map，不要在外部包裹
+# outputs the whol map credentials
 output "iam_users_credentials" {
   value     = module.iam-users-batch.iam_users_login_info
   sensitive = true
 }
 
-# 单独输出登录 URL
+# outputs the aws console login url
 output "aws_console_login_url" {
   value = module.iam-users-batch.aws_console_login_url
 }
