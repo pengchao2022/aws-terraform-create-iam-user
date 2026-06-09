@@ -21,6 +21,7 @@ module "iam-users-batch" {
     "sean.lim"          = { group = "sre" }
     "jiajia.xiao"       = { group = "sre" }
     "siwei.li"          = { group = "devops" }
+    "yiming.zhao"       = { group = "developers"}
   }
 
   # map permissions
