@@ -52,6 +52,8 @@ username: sean.lim -> +bbc(5^m&vf_k90085m=G#9UUi
 username: sophia.zhao -> zFh-}$w&dp+KX@}UeUYT98W3j
 allen@192 Downloads % 
 
+```
+
 - Check IAM user initial password ( user must changed this password on their first time login)
 
 ![aws_console](./aws_console.png)
