@@ -20,6 +20,7 @@ module "iam-users-batch" {
     "sophia.zhao"       = { group = "developers" }
     "sean.lim"          = { group = "sre" }
     "jiajia.xiao"       = { group = "sre" }
+    "siwei.li"          = { group = "devops" }
   }
 
   # map permissions
