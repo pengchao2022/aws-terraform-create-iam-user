@@ -8,8 +8,8 @@ module "iam-users-batch" {
   source = "git::https://github.com/pengchao2022/aws-terraform-modules.git//modules/iam-user?ref=iam-user-1.0"
   
   # read the encrypted key
-  pgp_key = file("${path.module}/mykey.pub")
-  
+  pgp_key = "keybase:maxwell0521" # this is keybase.io username
+
   # enable console login
   create_login_profile = true
 
