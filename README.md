@@ -34,7 +34,7 @@ allen@192 Downloads %  echo "wcBMA0M1JwC4xhDwAQf9Gl8xoBhj0trql2k00BQpYr6mnbhXDGP
 allen@192 Downloads % gpg --decrypt initial_pass.gpg
 gpg: encrypted with rsa2048 key, ID 43352700B8C610F0, created 2026-06-09
       "maxwell <pengchao.ma6@gmail.com>"
-XvkxbxyQ=pO4_svbp(et         # this is the plaintext initial password
+XvkxbxyQ=pO4_sv990(fm        # this is the plaintext initial password
 
 - You can also get all IAM users plaintext initital password 
 
@@ -46,7 +46,7 @@ allen@192 Downloads % cat credentials.json | jq -r 'to_entries[] | .value.userna
 done > all_passwords.txt
 
 allen@192 Downloads % cat all_passwords.txt 
-username: jiajia.xiao -> XvkxbxyQ=pO4_sv990(et
+username: jiajia.xiao -> XvkxbxyQ=pO4_sv990(fm
 username: kate.winslets -> lu)3T@Vw998706U^Mn5VAsJ
 username: sean.lim -> +bbc(5^m&vf_k90085m=G#9UUi
 username: sophia.zhao -> zFh-}$w&dp+KX@}UeUYT98W3j
